@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "y24fw"
+version = "0.0.1"
+description = "Framework"
+authors = ["Yooshyasha <maksimmorozov962@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+aiogram = "^3.10.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.4.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

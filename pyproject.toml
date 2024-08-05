@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "y24fw"
-version = "0.0.1"
+version = "0.0.3"
 description = "Framework"
 authors = ["Yooshyasha <maksimmorozov962@gmail.com>"]
 license = "MIT"

@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "y24fw"
-version = "0.0.3"
-description = "Framework"
+version = "0.1"
+description = "Library"
 authors = ["Yooshyasha <maksimmorozov962@gmail.com>"]
 license = "MIT"
 readme = "README.md"
@@ -9,10 +9,11 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 aiogram = "^3.10.0"
+pytest-asyncio = "^0.23.8"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.4.4"
-
+pytest-asyncio = "^0.23.8"
 
 [build-system]
 requires = ["poetry-core"]

@@ -1,14 +1,19 @@
 import logging
+
 from loguru import logger
 
-logger.add("data/logs/log_{time}.log", format="{level}: {time} - {message}")
+class Logger:
+    class InterceptHandler(logging.Handler):
+        def emit(self, record):
+            level = logger.level(record.levelname).name
+            logger.log(level, record.getMessage())
 
+    def __init__(self):
+        self.logger = logger
 
-class InterceptHandler(logging.Handler):
-    def emit(self, record):
-        level = logger.level(record.levelname).name
-        logger.log(level, record.getMessage())
+    def add_logger(self, name: str, level: int):
+        logging.getLogger(name).setLevel(level)
+        logging.getLogger(name).addHandler(self.InterceptHandler())
 
-
-logging.getLogger('aiogram').setLevel(logging.DEBUG)
-logging.getLogger('aiogram').addHandler(InterceptHandler())
+    def add_file_logger(self, filepath: str = "data/logs/log_{time}.log"):
+        logger.add(filepath, format="{level}: {time} - {message}")
